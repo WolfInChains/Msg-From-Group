@@ -16,7 +16,7 @@ longpoll = VkBotLongPoll(vk, group_id)
 def send_msg(chat_id: int, message: str, attachment: str = ""):
     return vk.method("messages.send", {**locals(), "random_id": 0})
 
-chat = input("\nВведите айди чата: ")
+chat = int(input("\nВведите айди чата: "))
 
 while True:
     try:
