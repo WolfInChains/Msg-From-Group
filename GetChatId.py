@@ -15,7 +15,7 @@ longpoll = VkBotLongPoll(vk, group_id)
 
 while True:
     try:
-        print("\nОтправьте " + f'"1"' + " в беседу если бот имеет полный доступ к переписке/права администратора.\n"
+        print("Отправьте " + f'"1"' + " в беседу если бот имеет полный доступ к переписке/права администратора.\n"
               "Отправьте " + f'"[club{group_id}|1]"' + " в беседу если бот не имеет полного доступа к переписке/прав администратора.\n")
         for event in longpoll.listen():
             if event.type == VkBotEventType.MESSAGE_NEW:
