@@ -13,7 +13,7 @@ vk.get_api()
 def send_msg(chat_id: int, message: str, attachment: str = ""):
     return vk.method("messages.send", {**locals(), "random_id": 0})
 
-chat = int(input("\nВведите айди чата: "))
+chat = int(input("Введите айди чата: "))
 
 while True:
     try:
