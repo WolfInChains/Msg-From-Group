@@ -1,11 +1,16 @@
 import vk_api
 
+print("Запуск бота...")
+print("Авторизация...")
+
 f = open("authorization.txt", "r")
 group_token = f.read()
 
 vk = vk_api.VkApi(token=group_token)
 vk._auth_token()
 vk.get_api()
+
+print("\nБот запущен")
 
 
 def send_msg(chat_id: int, message: str, attachment: str = ""):
