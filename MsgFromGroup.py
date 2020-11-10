@@ -1,19 +1,18 @@
 import vk_api
 
 f = open("authorization.txt", "r")
-data = f.read()
-line = data.split(':')
-group_id = line[0]
-group_token = line[1]
+group_token = f.read()
 
 vk = vk_api.VkApi(token=group_token)
 vk._auth_token()
 vk.get_api()
 
+
 def send_msg(chat_id: int, message: str, attachment: str = ""):
     return vk.method("messages.send", {**locals(), "random_id": 0})
 
-chat = int(input("Введите айди чата: "))
+
+chat = int(input("\nВведите айди чата: "))
 
 while True:
     try:
