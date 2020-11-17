@@ -4,7 +4,10 @@ print("Запуск бота...")
 print("Авторизация...")
 
 f = open("authorization.txt", "r")
-group_token = f.read()
+data = f.read()
+line = data.split(':')
+group_id = line[0]
+group_token = line[1]
 
 vk = vk_api.VkApi(token=group_token)
 vk._auth_token()
